@@ -10,6 +10,7 @@ distribution_type:   module
 requires:
     Set::IntSpan:                  0
     Test::More:                    0
+    perl:                          5.008000
 meta-spec:
     url:     http://module-build.sourceforge.net/META-spec-v1.3.html
     version: 1.3
