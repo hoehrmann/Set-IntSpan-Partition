@@ -8,7 +8,7 @@ use base qw(Exporter);
 our $VERSION = '0.02';
 
 our %EXPORT_TAGS = ( 'all' => [ qw(
-	
+
 ) ] );
 
 our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
@@ -39,7 +39,7 @@ sub _add {
 
   } @_;
 
-  push @parts, $rest unless $rest->empty;  
+  push @parts, $rest unless $rest->empty;
   return @parts;
 }
 
@@ -66,7 +66,7 @@ sub intspan_partition_map {
     return 1 if $x->[1] < $y->[1];
     return 0;
   });
-  
+
   for (my $ix = 0; $ix < @_; ++$ix) {
     my $obj = $_[$ix];
     for ($obj->spans) {
@@ -96,20 +96,20 @@ sub intspan_partition_map {
     my $prefX = [ $x->[0], $XandY->[0] - 1, $x->[2] ];
     my $suffX = [ $XandY->[1] + 1, $x->[1], $x->[2] ];
     my $onlyY = [ $XandY->[1] + 1, $y->[1], $y->[2] ];
-    
+
     for ($prefX, $suffX, $onlyY, $XandY) {
       next unless $_->[0] <= $_->[1];
       $heap->insert($_);
     }
   }
-  
+
   # group spans back into classes
   my %group;
   for my $item (@result) {
     my $key = join ',', uniq sort @{ $item->[2] };
     push @{ $group{$key} }, $item;
   }
-  
+
   my %map;
   while (my ($k, $v) = each %group) {
     my $class = Set::IntSpan->new([map {
@@ -117,7 +117,7 @@ sub intspan_partition_map {
     } @$v]);
     push @{ $map{$_} }, $class for uniq map { @{ $_->[2] } } @$v;
   }
-  
+
   return %map;
 }
 
