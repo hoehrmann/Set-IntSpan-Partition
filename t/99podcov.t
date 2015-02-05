@@ -1,6 +1,4 @@
 # 99pod.t -- Minimally check POD for code coverage.
-#
-# $Id$
 
 use strict;
 use warnings;

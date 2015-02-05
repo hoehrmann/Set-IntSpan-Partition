@@ -1,6 +1,4 @@
 # 99pod.t -- Minimally check POD for problems.
-#
-# $Id$
 
 use strict;
 use warnings;
