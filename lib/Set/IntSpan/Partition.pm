@@ -169,7 +169,7 @@ ideas welcome.
 
 =head1 AUTHOR / COPYRIGHT / LICENSE
 
-  Copyright (c) 2008-2009 Bjoern Hoehrmann <bjoern@hoehrmann.de>.
+  Copyright (c) 2008-2015 Bjoern Hoehrmann <bjoern@hoehrmann.de>.
   This module is licensed under the same terms as Perl itself.
 
 =cut
