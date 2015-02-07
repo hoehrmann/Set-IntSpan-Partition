@@ -1,3 +1,6 @@
+use strict;
+use warnings;
+
 use Test::More;
 use Set::IntSpan;
 use Set::IntSpan::Partition;
