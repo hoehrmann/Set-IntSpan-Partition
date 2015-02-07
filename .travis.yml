@@ -10,7 +10,7 @@ perl:
 
 install:
     - cpanm Heap::Simple
-    - cpanm Heap::Simple::XS
+    - cpanm -n Heap::Simple::XS
     - cpanm Set::IntSpan
     - cpanm Test::Pod
     - cpanm Test::Pod::Coverage
