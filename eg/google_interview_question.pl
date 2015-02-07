@@ -31,18 +31,3 @@ push @spans, $span_to_merge;
 my @output = intspan_partition @spans;
 
 print join ',', @output;
-
-
-
-# bioinformatics problem: https://www.biostars.org/p/7825/
-#
-# How To Get Non-Overlapping Coordinates From A List That Contains
-# Overlapping Coordinates?
-#
-# chr1    1       10
-# chr1    15      20
-# chr1    17      30
-# chr1    18      19
-#
-# This maps to the intervals (1, 10), (15, 20), (17, 30) and (18, 19).
-# What is the list of non-overlapping intervals?
