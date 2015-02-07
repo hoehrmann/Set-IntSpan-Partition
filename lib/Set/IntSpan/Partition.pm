@@ -167,6 +167,11 @@ C<intspan_partition> and C<intspan_partition_map>.
 Slow. Patches welcome. I don't like the name C<intspan_partition>,
 ideas welcome.
 
+=head1 THANKS
+
+Thanks to Paul Cochrane for his many improvements to this distribution as
+part of Neil Bowers' L<http://neilb.org/2014/11/29/pr-challenge-2015.html>.
+
 =head1 AUTHOR / COPYRIGHT / LICENSE
 
   Copyright (c) 2008-2015 Bjoern Hoehrmann <bjoern@hoehrmann.de>.
