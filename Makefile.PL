@@ -7,8 +7,7 @@ WriteMakefile(
   PREREQ_PM         => {
     'Test::More'         =>  0,
     'Set::IntSpan'       =>  0,
-    'Heap::Simple'       =>  0.13,
-    'Heap::Simple::XS'   =>  0.10,
+    'Heap::MinMax'       =>  0,
     'List::Util'         =>  0,
     'List::MoreUtils'    =>  0,
   },

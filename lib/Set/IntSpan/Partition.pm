@@ -5,7 +5,7 @@ use strict;
 use warnings;
 use base qw(Exporter);
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 our %EXPORT_TAGS = ( 'all' => [ qw(
 
@@ -55,16 +55,13 @@ sub intspan_partition {
 
 sub intspan_partition_map {
 
-  use Heap::Simple qw//;
+  use Heap::MinMax qw//;
   use List::Util qw/min max/;
   use List::MoreUtils qw/uniq/;
 
-  my $heap = Heap::Simple->new(order => sub {
+  my $heap = Heap::MinMax->new(fcompare => sub {
     my ($x, $y) = @_;
-    return 1 if $x->[0] < $y->[0];
-    return 0 if $x->[0] > $y->[0];
-    return 1 if $x->[1] < $y->[1];
-    return 0;
+    return ( ($x->[0] <=> $y->[0]) || ($x->[1] <=> $y->[1]) );
   });
 
   for (my $ix = 0; $ix < @_; ++$ix) {
@@ -77,8 +74,8 @@ sub intspan_partition_map {
   my @result;
 
   while (1) {
-    my $x = $heap->extract_first;
-    my $y = $heap->extract_first;
+    my $x = $heap->pop_min;
+    my $y = $heap->pop_min;
 
     last unless defined $x;
     push @result, $x unless defined $y;
